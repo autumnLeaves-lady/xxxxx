@@ -10,7 +10,7 @@ import RightProp from './components/right-prop.vue'
       <LeftCom />
     </div>
     <div class="border-r"><Container /></div>
-    <div class="w-80"><RightProp /></div>
+    <div class="w-96"><RightProp /></div>
   </div>
 </template>
 

@@ -1,10 +1,18 @@
 <script setup lang="ts">
 import { comList } from './config'
-import { useDataCenterStore } from '@/stores/counter'
+import { useCenter } from '@/hooks'
+import { jsonData_all } from '@/com-tsx'
+import { cloneDeep } from 'lodash-es'
+import { createKey } from '@/utils/common'
 
-const { addConfigList } = useDataCenterStore()
+const { addConfigList } = useCenter()
+
 function selectCom(item) {
-  addConfigList(item)
+  if (jsonData_all[item.type]) {
+    const json = cloneDeep(jsonData_all[item.type])
+    json.props._id = createKey()
+    addConfigList(json)
+  }
 }
 </script>
 

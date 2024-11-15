@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { useDataCenterStore } from '@/stores/counter'
-import { comListObj } from '@/com-tsx'
-console.log('comListObj: ', comListObj)
+import { render_all } from '@/com-tsx'
+import { useCenter } from '@/hooks'
 
-const { configList } = useDataCenterStore()
+const { configList } = useCenter()
 
 function Render(props) {
-  return comListObj[props.item.type].render()
+  return render_all[props.item.type](props.item)
 }
 </script>
 
 <template>
-  <div>
+  <div class="p-5">
     <div v-for="item in configList" :key="item.type">
       <Render :item />
     </div>
