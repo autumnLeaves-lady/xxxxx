@@ -1,5 +1,5 @@
 import { NButton, NIcon } from 'naive-ui'
-import { h, resolveComponent } from 'Vue'
+import { h, resolveComponent } from 'vue'
 import IconList from '@/components/iconList.vue'
 
 export const jsonData = {
@@ -103,15 +103,7 @@ export const propsConfig = [
   },
   {
     title: '常用事件',
-    config: [
-      {
-        label: '点击事件',
-        path: '_onClick',
-        render() {
-          return <div>点击事件</div>
-        },
-      },
-    ],
+    config: [{ label: '点击事件', path: '_onClick', type: 'code' }],
   },
 ]
 export function render(data) {

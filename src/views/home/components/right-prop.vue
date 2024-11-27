@@ -3,6 +3,7 @@ import { propsConfig_all } from '@/com-tsx'
 import { useCenter } from '@/hooks'
 import { NSwitch, NColorPicker, NInput } from 'naive-ui'
 import { useGlobal } from '@/hooks'
+import JsEditor from '@/components/js-editor.vue'
 
 const {} = useGlobal()
 
@@ -58,6 +59,8 @@ const list = computed(() => {
             {{ value }}
           </n-radio>
         </n-radio-group>
+
+        <JsEditor v-else-if="i.type === 'code'"></JsEditor>
 
         <Render v-else-if="typeof i.render === 'function'" :item="i" />
 
